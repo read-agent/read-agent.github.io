@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts</title>
+
+    <meta name="description" content="A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <meta property="og:image" content="https://read-agent.github.io/img/teaser.png">
+    <meta property="og:image:type" content="image/gif">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="338">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://read-agent.github.io/"/>
+    <meta property="og:title" content="Iterative Visual Prompting Elicits Actionable Knowledge for VLMs" />
+    <meta property="og:description" content="Project page for A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts." />
+
+    <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts" />
+    <meta name="twitter:description" content="Project page for A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts." />
+    <meta name="twitter:image" content="https://read-agent.github.io/img/teaser.png" />
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css"> -->
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFGXXEJYFN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XFGXXEJYFN');
+    </script>
+
+    <style>
+          .nav-pills {
+            position: relative;
+            display: inline;
+        }
+
+        .imtip {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .carousel-item {
+  transition: opacity 0.25s ease-in-out;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <br>
+                <strong>
+                    <font size="+3">A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts</font>
+                </strong>
+                <!--<small>
+                    CoRL 2021
+                </small>-->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="list-inline">
+                    <br>
+                    <li>Kuang-Huei Lee</li>
+                    <li>Xinyun Chen</li>
+                    <li>Hiroki Furuta</li>
+                    <li>John Canny</li>
+                    <li>Ian Fischer</li>
+                    <br>
+                    <br><br>
+                    <a href="https://www.deepmind.com/">
+                        <image src="img/google-deepmind-logo.png" height="37px">
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://research.google/">
+                        <image src="img/google-research-logo.png" height="30px">
+                    </a>
+                </ul>
+            </div>
+        </div>
+        
+
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="assets/read_agent.pdf">
+                            <image src="img/paper_small.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                        </a>
+                    </li>
+
+
+                    <!-- <li>
+                        <a href="#demo">
+                            <image src="img/hf-logo.png" height="60px">
+                                <h4><strong>Demo</strong></h4>
+                        </a>
+                    </li> -->
+
+                    <!-- <li>
+                        <a href="https://youtu.be/7KiKg0rdSSQ">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="">
+                        <image src="img/google-ai-blog-small.png" height="60px">
+                            <h4><strong>Blogpost</strong></h4>
+                        </a>
+                    </li> -->
+                     <li>
+                        <a href="assets/readagent_demo.ipynb">
+                        <!-- <image src="img/github.png" height="60px"> -->
+                        <image src="img/colab_icon.png" height="60px">
+                            <h4><strong>Colab Demo</strong></h4>
+                        </a>                   
+                    </li> 
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <br>
+                <image src="img/teaser.png" class="img-responsive">
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <p class="text-justify">
+                    <br>
+                    Long context is hard!
+                    <br>
+                    <br>
+                    Transformer-based Large Language Models (LLMs) are highly capable of language understanding, but the amount of text that LLMs are able to read at one time is constrained. Not only is there an explicit context length limitation, but it has also been found that performance of LLMs tends to decline with increasingly long inputs even when they don't actually exceed the explicit context window. <b>In contrast, humans can read, understand, and reason over very long texts, such as a series of interrelated books.</b>
+                    <br>
+                    <br>
+                    <b>We posit that an underlying reason for this gap is inherent in the differences in reading approaches.</b> Typically, we use LLMs to consume the exact given content word-by-word and the process is relatively passive. On the other hand, humans read and reason over long text differently. First, the exact information tends to be forgotten quickly, whereas the fuzzier gist information, i.e. the substance irrespective of exact words, from past readings lasts much longer (<a href="https://en.wikipedia.org/wiki/Fuzzy-trace_theory"><u>fuzzy-trace theory</u></a>). Second, human reading is an interactive process. When weneed to remind ourselves of relevant details in orderto complete a task, such as answering a question, we look them up in the original text.
+                    <br>
+                    <br>
+                    We think that using the fuzzy gist memory to capture global context and attending to local details together enables humans to reason over very long context efficiently, in terms of how much information to process at once, and is also important for comprehension.
+                    <br>
+                    <br>
+                    Inspired by how humans interactively read long documents, we implement ReadAgent as a simple prompting system that uses the advanced language capabilities of LLMs to (1) decide what content to store together in a memory episode, (2) compress those memory episodes into short episodic memories called gist memories, and (3) take actions to look up passages in the original text if ReadAgent needs to remind itself of relevant details to complete a task. We evaluate ReadAgent against baselines using retrieval methods, using the original long contexts, and using the gist memories. These evaluations are performed on three long-document reading comprehension tasks: QuALITY (max 6,000 words), NarrativeQA (max 343,000 words), and QMSum (max 26,300 words). ReadAgent outperforms the baselines on all three tasks while extending the effective context window by 3-20x.
+                    <br>
+                    <br>
+                    In addition, we adapt ReadAgent to web navigation, which is a fundamentally very-long context agent setting. We find that ReadAgent is simple to adapt to this setting and shows promising performance.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row" id="method">
+            
+            <div class="col-md-8 col-md-offset-2">
+                <br>
+                <h3>ReadAgent reads like humans</h3>
+                <p style="text-align:center;">
+                    <video poster="" id="" autoplay controls muted loop inline height="100%" playbackRate=2.0 width="710" height="400">
+                        <source src="vids/read_agent.mp4" type="video/mp4">
+                    </video>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Retrieval as a reasoning task</h3>
+                <p class="text-justify">
+                    Conventional retrieval approaches based on relevance ranking can handle very large set of documents. In contrast, our work implements a form of <b>retrieval by reasoning over a contextualized gist memory</b>, all with zero-shot LLM prompting. This rethinking of retrieval directly leverages the strength and flexibility of LLM language understanding to reason about which documents to retrieve. Our approach is well-suited to densely-correlated long-document pieces, such as a series of books or a conversation history. 
+              </p>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    We thank Sergey Ioffe, Rif A. Saurous, YujinTang, Sergio Guadarrama, Daliang Li, Felix Yu, and Rob Fergus for valuable feedback and discussion.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <p>
+                <a href="http://arxiv.org/abs/">[arxiv]</a>
+            </p>
+<!--                 <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly style="height: 250px;">
+@article{google2024readagent,
+    title={A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts},
+    author={Lee, Kuang-Huei and Chen, Xinyun and Furuta, Hiroki and Canny, John and Fischer, Ian},
+    year={2024},
+    eprint={},
+    archivePrefix={arXiv},
+    primaryClass={}
+}
+</textarea>
+                </div> -->
+            </div>
+
+        </div>
+
+      
+    </div>
+</body>
+
+<script>
+   
+   document.addEventListener('DOMContentLoaded', function () {
+  var myCarousel = document.querySelector('#carouselExample');
+  var carousel = new bootstrap.Carousel(myCarousel, {
+    interval: false,
+    wrap: false // Ensure wrap is set to false to prevent automatic wrapping
+  });
+
+  let debounceTimer;
+  myCarousel.addEventListener('wheel', function (e) {
+    e.preventDefault(); // Prevent the page from scrolling
+
+    if (debounceTimer) clearTimeout(debounceTimer); // Clear the previous timer
+
+    debounceTimer = setTimeout(function() {
+      const totalItems = myCarousel.querySelectorAll('.carousel-item').length;
+      const currentIndex = myCarousel.querySelector('.carousel-item.active').getAttribute('data-bs-slide-to');
+
+      if (e.deltaY < 0 && currentIndex > 0) {
+        // Scroll up, go to the previous item if not the first item
+        carousel.prev();
+      } else if (e.deltaY > 0 && currentIndex < totalItems - 1) {
+        // Scroll down, go to the next item if not the last item
+        carousel.next();
+      }
+      // Do nothing if the current slide is the first or the last
+    }, 10); // Adjust this delay to control sensitivity
+  });
+});
+
+   
+</script>
+</html>
