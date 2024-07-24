@@ -93,14 +93,12 @@
                     <li>John Canny</li>
                     <li>Ian Fischer</li>
                     <br>
-                    <br><br>
+                    <br>
                     <a href="https://www.deepmind.com/">
-                        <image src="img/google-deepmind-logo.png" height="37px">
+                        <image src="img/google-deepmind-logo.png" height="32px">
                     </a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://research.google/">
-                        <image src="img/google-research-logo.png" height="30px">
-                    </a>
+                    <br>
+                    <br>
                 </ul>
             </div>
         </div>
@@ -141,8 +139,8 @@
                         <a href="https://github.com/read-agent/read-agent.github.io/blob/main/assets/read_agent_demo.ipynb">
                         <!-- <image src="img/github.png" height="60px"> -->
                         <image src="img/colab_icon.png" height="60px">
-                            <h4><strong>Colab Demo</strong></h4>
-                        </a>                   
+                            <h4><strong>Colab Demo & Prompts</strong></h4>
+                        </a>
                     </li> 
                 </ul>
             </div>
@@ -168,7 +166,7 @@
                     We think that using the fuzzy gist memory to capture global context and attending to local details together enables humans to reason over very long context efficiently, in terms of how much information to process at once, and is also important for comprehension.
                     <br>
                     <br>
-                    Inspired by how humans interactively read long documents, we implement ReadAgent as a simple prompting system that uses the advanced language capabilities of LLMs to (1) decide what content to store together in a memory episode, (2) compress those memory episodes into short episodic memories called gist memories, and (3) take actions to look up passages in the original text if ReadAgent needs to remind itself of relevant details to complete a task. We evaluate ReadAgent against baselines using retrieval methods, using the original long contexts, and using the gist memories. These evaluations are performed on three long-document reading comprehension tasks: QuALITY (max 6,000 words), NarrativeQA (max 343,000 words), and QMSum (max 26,300 words). ReadAgent outperforms the baselines on all three tasks while extending the effective context window by 3-20x.
+                    Inspired by how humans interactively read long documents, we implement ReadAgent as a simple prompting system that uses the advanced language capabilities of LLMs to (1) decide what content to store together in a memory episode, (2) compress those memory episodes into short episodic memories called gist memories, and (3) take actions to look up passages in the original text if ReadAgent needs to remind itself of relevant details to complete a task. We evaluate ReadAgent against baselines using retrieval methods, using the original long contexts, and using the gist memories. These evaluations are performed on three long-document reading comprehension tasks: QuALITY (max 6,000 words), NarrativeQA (max 343,000 words), and QMSum (max 26,300 words). ReadAgent outperforms the baselines on all three tasks while extending the effective context window by 3.5-20x.
                     <br>
                     <br>
                     In addition, we adapt ReadAgent to web navigation, which is a fundamentally very-long context agent setting. We find that ReadAgent is simple to adapt to this setting and shows promising performance.
@@ -199,6 +197,14 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Prompts</h3>
+                <p class="text-justify">
+                    We show the prompts that were used for the QuALTIY, QMSum, NarrativeQA datasets with the PaLM 2-L model in <a href="https://github.com/read-agent/read-agent.github.io/blob/main/assets/read_agent_demo.ipynb">Colab Demo & Prompts</a>.
+              </p>
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
